@@ -5080,12 +5080,12 @@ expire_status() {
 		# this is a renewed cert which has been replaced by
 		# an issued cert
 		if [ "$db_serial" != "$cert_serial" ]; then
-			information "\
+			information "
   expire_status: SERIAL MISMATCH
   db_serial:     $db_serial
   cert_serial:   $cert_serial
   commonName:    $db_cn
-  cert_issued:   $cert_issued${NL}"
+  cert_issued:   $cert_issued$"
 			#return 0
 		fi
 
@@ -5317,7 +5317,7 @@ renew_status() {
 serial mismatch:
   db_serial:    $db_serial
   cert_serial:  $cert_serial
-  cert_file_in: $cert_file_in"
+  cert_file_in: $cert_file_in${NL}"
 			return 0
 		fi
 
