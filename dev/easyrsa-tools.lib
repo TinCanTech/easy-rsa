@@ -317,7 +317,7 @@ cert_date_to_timestamp_s: input error"
 
 	# Darwin, BSD
 	elif timestamp_s="$(
-			date -j -f '%b %d %T %Y %Z' \
+			LC_ALL='C' date -j -f '%b %d %T %Y %Z' \
 				"$in_date" +%s 2>/dev/null
 			)"
 	then : # ok
